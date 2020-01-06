@@ -3,6 +3,7 @@ package com.surodev.fms.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,7 +49,7 @@ public class Ship {
 	@JsonBackReference
 	private Set<Owner> owners = new HashSet<Owner>();
 
-	@OneToOne(mappedBy = "ship")
+	@OneToOne(mappedBy = "ship", cascade = CascadeType.ALL)
 	private Category category;
 
 	/**
@@ -152,5 +153,11 @@ public class Ship {
 	 */
 	public Category getCategory() {
 		return category;
+	}
+
+	@Override
+	public String toString() {
+		return "Ship: name = " + getShipName() + " id = " + getId() + " imo_number = " + getImoNumber() + " category = "
+				+ (category != null ? " valid" : " null");
 	}
 }

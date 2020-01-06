@@ -22,7 +22,7 @@
 					"raw": "{\n  \"imoNumber\": 123456,\n  \"shipName\": \"Zeus\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8324/api/ships/add",
+					"raw": "http://localhost:8331/api/ships/add",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -238,7 +238,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "8331",
+					"port": "8300",
 					"path": [
 						"api",
 						"ships",
@@ -261,7 +261,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8316/api/ships/1/owner/1",
+					"raw": "http://localhost:8331/api/ships/1/owner/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -303,6 +303,39 @@
 						"15",
 						"owner",
 						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ship info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"imoNumber\": 12335456,\n  \"shipName\" : \"Earth\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8331/api/ships/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships",
+						"update",
+						"1"
 					]
 				}
 			},

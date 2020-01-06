@@ -16,6 +16,7 @@ import static com.surodev.fms.common.Constants.CATEGORY_TABLE;
 import static com.surodev.fms.common.Constants.COLUMN_SHIP_ID;
 import static com.surodev.fms.common.Constants.COLUMN_SHIP_TYPE;
 import static com.surodev.fms.common.Constants.COLUMN_SHIP_TONNAGE;
+
 /**
  * Class representing the Category object. The Category entity is mapped to the
  * category table which will provide ship informations like ship type, tonnage
@@ -106,5 +107,11 @@ public class Category {
 	 */
 	public void setShipTonnage(long tonnage) {
 		mShipTonnage = tonnage;
+	}
+
+	@Override
+	public String toString() {
+		return "Category: type = " + getShipType() + " id = " + getId() + " tonnage = " + getShipTonnage() + " ship = "
+				+ (ship != null ? ship.toString() : " null");
 	}
 }
