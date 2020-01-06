@@ -1,0 +1,7 @@
+com.surodev
+com.surodev.fms.common
+com.surodev.fms.controller
+com.surodev.fms.domain
+com.surodev.fms.exceptions
+com.surodev.fms.repository
+com.surodev.fms.service
