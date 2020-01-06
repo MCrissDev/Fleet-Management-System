@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "b42b78c2-8d77-4b6d-a671-cd3734b9cd27",
+		"name": "FMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add new ship",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"imoNumber\": 123456,\n  \"shipName\": \"Zeus\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8324/api/ships/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships",
+						"add"
+					]
+				},
+				"description": "Add ship request example"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new owner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Hulk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8331/api/owners/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"owners",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"shipType\": \"Cruise\",\n  \"shipTonnage\": 123\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8331/api/categories/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"categories",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all ships",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8331/api/ships",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all owners",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8331/api/owners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"owners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8331/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ship info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8331/api/ships",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ship by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8300/api/ships/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set ship owner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8316/api/ships/1/owner/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships",
+						"1",
+						"owner",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set ship category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8331/api/ships/15/owner/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8331",
+					"path": [
+						"api",
+						"ships",
+						"15",
+						"owner",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
