@@ -44,8 +44,7 @@ public class Ship {
 	private long mImoNumber;
 
 	@ManyToMany
-	@JoinTable(name = SHIPS_OWNERS_TABLE, joinColumns = @JoinColumn(name = COLUMN_SHIP_ID), 
-		inverseJoinColumns = @JoinColumn(name = COLUMN_OWNER_ID))
+	@JoinTable(name = SHIPS_OWNERS_TABLE, joinColumns = @JoinColumn(name = COLUMN_SHIP_ID), inverseJoinColumns = @JoinColumn(name = COLUMN_OWNER_ID))
 	@JsonBackReference
 	private Set<Owner> owners = new HashSet<Owner>();
 
@@ -140,7 +139,9 @@ public class Ship {
 	 * @param newCategory valid Category instance
 	 */
 	public void setCategory(Category newCategory) {
-		newCategory.setShip(this);
+		if (newCategory != null) {
+			newCategory.setShip(this);
+		}
 		category = newCategory;
 	}
 

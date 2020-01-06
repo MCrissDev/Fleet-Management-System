@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -169,6 +170,31 @@ public class ShipController {
 			return ResponseEntity.ok(ship);
 		} catch (ResourceNotFoundException ex) {
 			Log.e(TAG, "getShipInfo: failed to find ship id = " + shipId + ". Ex = " + ex.toString());
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	/**
+	 * Update ship
+	 *
+	 * @param shipId  valid ship id
+	 * @param newShip Valid Ship instance
+	 * @return ResponseEntity
+	 */
+	@PutMapping("/ships/update/{shipId}")
+	public ResponseEntity<Ship> updateShip(@PathVariable long shipId, @Valid @RequestBody Ship newShip) {
+		try {
+			Ship oldShip = mShipService.getObjectById(shipId);
+			oldShip.setShipName(newShip.getShipName());
+			oldShip.setImoNumber(newShip.getImoNumber());
+			oldShip.setCategory(newShip.getCategory());
+			oldShip.setOwners(newShip.getOwners());
+			return ResponseEntity.ok(mShipService.updateObject(oldShip));
+		} catch (BadResourceException e) {
+			Log.e(TAG, "updateShip: failed to update ship. Ex = " + e.toString());
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		} catch (ResourceNotFoundException e) {
+			Log.e(TAG, "updateShip: failed to update ship. Ex = " + e.toString());
 			return ResponseEntity.notFound().build();
 		}
 	}
